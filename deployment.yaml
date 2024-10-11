@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-bodybuilder-gym
+  labels:
+    app: app-gym
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-gym
+  template:
+    metadata:
+      labels:
+        app: app-gym
+    spec:
+      containers:
+      - name: c-gym-app
+        image: raemondarellano/body-builder-gym:1.0.0
+        ports:
+        - containerPort: 80 

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-bodybuilder-gym
+
+spec:
+  rules:
+  - host: "my.gym"         # domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: service-bodybuilder-gym
+            port:
+              number: 80
+
+  - host: "protein.my.gym"         # domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: service-bodybuilder-protien
+            port:
+              number: 80

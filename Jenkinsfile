@@ -23,7 +23,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/iam-arellano/body-builder.git'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/iam-arellano/body-builder-gym.git'
                     echo 'Git Checkout Completed'
                 }
         }
@@ -80,7 +80,7 @@ pipeline {
                    git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github_token', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/iam-arellano/body-builder-protien.git  main"
+                  sh "git push https://github.com/iam-arellano/body-builder-gym.git  main"
                 }
             }
         }

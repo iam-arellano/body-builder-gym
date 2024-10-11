@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: c-gym-app
-        image: raemondarellano/body-builder-gym:1.0.0
+        image: raemondarellano/body-builder-gym:1.0.0-2
         ports:
         - containerPort: 80 
